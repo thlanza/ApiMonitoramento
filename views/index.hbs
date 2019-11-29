@@ -1,0 +1,45 @@
+<html>
+    <head>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    </head>
+    <body>
+    
+        <h1 id="titulo">Relatório para o mês de {{ mes }}  de {{ ano }}   </h1>
+        <h2 id="subtitulo">O número de chamados na api http://rhresponde.mg.gov.br/api/getchamados é: {{ tamanho1 }}</h2>
+        <h2 id="subtitulo">O número de chamados na api http://homologacao.planejamento.mg.gov.br/api/endpoint é: {{ tamanho2 }}</h2>
+        <h2 id="subtitulo">Todos os chamados da api http://rhresponde.mg.gov.br/api/getchamados que não estão na api http://homologacao.planejamento.mg.gov.br/api/endpoint: {{ tamanhoDiferença }}</h2>
+        <table id="tabela">
+            <thead>
+              <th>Id</th>
+              <th>Data</th>
+            </thead>
+           <tbody>
+             <tr></tr>
+
+          
+           </tbody>
+        </ul>
+        </table>
+     
+
+
+   
+  <script src="/assets/js/jquery-3.2.1.min.js"></script>
+    <script>
+     
+     let Id = [ {{{ arraysId }}} ];
+ 
+       $(document).ready(function(){
+   
+   Id.forEach(function(item, index) {
+
+    $("tbody").append(`<tr class="tabela"><td>Chamado${index + 1}<td>${item}</td></tr>`);
+   });
+
+  }); 
+
+
+
+     
+    </script>
+    </body></html>
